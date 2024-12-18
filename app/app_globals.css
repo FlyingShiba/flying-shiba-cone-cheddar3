@@ -1,0 +1,564 @@
+:root {
+  --font-inter: var(--font-inter);
+  --font-orbitron: var(--font-orbitron);
+  --font-press-start-2p: var(--font-press-start-2p);
+  --font-russo-one: var(--font-russo-one);
+  --font-bangers: var(--font-bangers);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: white;
+  overflow-x: hidden;
+  background: url('/a/34669bfa-c736-488e-bce9-53a69d3a8abc') center/cover no-repeat fixed;
+  min-height: 100vh;
+}
+
+.cheddar-droplet {
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+  animation: fadeOut 2s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(0.5) translateY(50px); }
+}
+
+nav {
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-title {
+  color: #ffd700;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 20px #ff6b6b;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+}
+
+nav a {
+  color: #ffd700;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s;
+  font-family: 'Orbitron', sans-serif;
+}
+
+nav a:hover { 
+  color: #ff6b6b;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 24px;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #ffd700;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+section {
+  padding-top: 80px;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.flying-shiba {
+  width: 200px;
+  position: absolute;
+  z-index: 2;
+  left: -200px;
+}
+
+.flying-shiba img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.shiba-1 {
+  top: 15%;
+  animation: flyAcrossOscillate1 4s linear infinite 0s;
+}
+
+.shiba-2 {
+  top: 50%;
+  animation: flyAcrossOscillate2 4s linear infinite 1.5s;
+}
+
+.shiba-3 {
+  top: 75%;
+  animation: flyAcrossOscillate3 4s linear infinite 2.8s;
+}
+
+@keyframes flyAcrossOscillate1 {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(20vw) translateY(30px);
+  }
+  30% {
+    transform: translateX(40vw) translateY(-30px);
+  }
+  50% {
+    transform: translateX(60vw) translateY(30px);
+  }
+  70% {
+    transform: translateX(80vw) translateY(-30px);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(100vw) translateY(30px);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes flyAcrossOscillate2 {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(20vw) translateY(-30px);
+  }
+  30% {
+    transform: translateX(40vw) translateY(30px);
+  }
+  50% {
+    transform: translateX(60vw) translateY(-30px);
+  }
+  70% {
+    transform: translateX(80vw) translateY(30px);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(100vw) translateY(-30px);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes flyAcrossOscillate3 {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(20vw) translateY(20px);
+  }
+  30% {
+    transform: translateX(40vw) translateY(-20px);
+  }
+  50% {
+    transform: translateX(60vw) translateY(20px);
+  }
+  70% {
+    transform: translateX(80vw) translateY(-20px);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(100vw) translateY(20px);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0);
+    opacity: 0;
+  }
+}
+
+.meme-gallery {
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.meme-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.meme-container img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,215,0,0.3);
+  transition: transform 0.2s ease;
+  object-fit: contain;
+  height: 300px;
+  background: rgba(0,0,0,0.2);
+}
+
+.meme-gallery img:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  font-size: 3em;
+  margin: 40px 0;
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  font-family: 'Orbitron', sans-serif;
+}
+
+#tokenomics, #how-to-buy {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.tokenomics-info {
+  font-size: 24px;
+  line-height: 2;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  margin-top: 20px;
+  max-width: 800px;
+  width: 90%;
+}
+
+.tokenomics-info p {
+  margin: 20px 0;
+  white-space: pre-line;
+  font-family: 'Orbitron', sans-serif;
+  text-align: left;
+}
+
+.how-to-buy-info {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  margin-top: 20px;
+  max-width: 800px;
+  width: 90%;
+  text-align: left;
+}
+
+.how-to-buy-info h3 {
+  color: #ffd700;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.how-to-buy-info .step {
+  margin-bottom: 30px;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.how-to-buy-info .step-number {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.about-info {
+  font-size: 24px;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  margin-top: 20px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  z-index: 2;
+}
+
+.about-info p {
+  margin: 20px 0;
+  font-family: 'Orbitron', sans-serif;
+  text-align: left;
+  color: white;
+}
+
+.about-shiba-left {
+  top: 20%;
+  animation: flyLeftToRight 8s linear infinite;
+}
+
+.about-shiba-right {
+  top: 30%;
+  animation: flyRightToLeft 8s linear infinite;
+}
+
+@keyframes flyLeftToRight {
+  0% {
+    transform: translateX(-200px) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px)) translateY(-50px);
+    opacity: 0;
+  }
+}
+
+@keyframes flyRightToLeft {
+  0% {
+    transform: translateX(calc(100vw + 200px)) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-200px) translateY(50px);
+    opacity: 0;
+  }
+}
+
+#about {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.meme-shiba-diagonal {
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+  animation: flyDiagonalLeftToRight 4s linear infinite;
+}
+
+.meme-shiba-diagonal img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@keyframes flyDiagonalLeftToRight {
+  0% {
+    transform: translate(-200px, calc(100% + 200px));
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(100vw + 200px), -200px);
+    opacity: 0;
+  }
+  50.1% {
+    transform: translate(calc(100vw + 200px), calc(100% + 200px)) scaleX(-1);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-200px, -200px) scaleX(-1);
+    opacity: 0;
+  }
+}
+
+.about-shiba-diagonal {
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+  animation: flyDiagonalLeftToRightAbout 4s linear infinite;
+}
+
+.about-shiba-diagonal img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@keyframes flyDiagonalLeftToRightAbout {
+  0% {
+    transform: translate(-200px, calc(100% + 200px));
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(100vw + 200px), -200px);
+    opacity: 0;
+  }
+  50.1% {
+    transform: translate(calc(100vw + 200px), calc(100% + 200px)) scaleX(-1);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-200px, -200px) scaleX(-1);
+    opacity: 0;
+  }
+}
+
+.flying-shiba.about-shiba-left,
+.flying-shiba.tokenomics-shiba-left,
+.flying-shiba.how-to-buy-shiba-left {
+  top: 20%;
+  animation: flyLeftToRight 8s linear infinite;
+}
+
+.flying-shiba.about-shiba-right,
+.flying-shiba.tokenomics-shiba-right,
+.flying-shiba.how-to-buy-shiba-right {
+  top: 30%;
+  animation: flyRightToLeft 8s linear infinite;
+}
+
+.flying-shiba.about-shiba-diagonal,
+.flying-shiba.tokenomics-shiba-diagonal,
+.flying-shiba.how-to-buy-shiba-diagonal {
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+  animation: flyDiagonalLeftToRightAbout 4s linear infinite;
+}
+
+.home-shiba-diagonal {
+  position: absolute;
+  width: 300px;
+  z-index: 2;
+  animation: flyDiagonalLeftToRightHome 4s linear infinite;
+}
+
+.home-shiba-diagonal img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@keyframes flyDiagonalLeftToRightHome {
+  0% {
+    transform: translate(-300px, calc(100% + 300px));
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(100vw + 300px), -300px);
+    opacity: 0;
+  }
+  50.1% {
+    transform: translate(calc(100vw + 300px), calc(100% + 300px)) scaleX(-1);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-300px, -300px) scaleX(-1);
+    opacity: 0;
+  }
+}
+
